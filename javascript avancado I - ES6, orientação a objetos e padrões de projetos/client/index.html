@@ -13,7 +13,12 @@
 
     <h1 class="text-center">Negociações</h1>
 
-    <form class="form">
+    <!-- 
+        Mudança de estrátegia para adicionar o evento, onde é feito normalmente
+        no javascript, dessa forma agora é feito normalmente pelos frameworks
+        js.
+     -->
+    <form class="form" onsubmit="negociacaoController.adiciona(event)">
 
         <div class="form-group">
             <label for="data">Data</label>
@@ -62,31 +67,12 @@
         </tfoot>
     </table>
     <script src="js/app/models/Negociacao.js"></script>
-    <script src="js/app/controller/NegociacaoController.js"></script>
+    <script src="js/app/controllers/NegociacaoController.js"></script>
     <script>
-
-        let n1 = new Negociacao(new Date(), 10, 200.50);
-        // n1.quantidade = 10;
-        // n1.valor = 200.50;
-        console.log(n1.data);
-
-        n1.data.setDate(20)
-        console.log(n1.data);
-
-        var idade = 18;
-        var temCarteira = true;
-
-        (function () {
-            if (idade >= 18 && temCarteira) {
-                var msg = 'Pode dirigir';
-                console.log(msg);
-            }
-        });
-
-        alert(msg);
-
-
+        
+        let negociacaoController = new NegociacaoController();
     </script>
+    
 </body>
 
 </html>

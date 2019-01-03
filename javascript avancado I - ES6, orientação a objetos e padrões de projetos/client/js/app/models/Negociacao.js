@@ -40,7 +40,7 @@ class Negociacao {
         return this._quantidade
     }
 
-    get calor(){
+    get valor(){
         return this._valor
     }
 
