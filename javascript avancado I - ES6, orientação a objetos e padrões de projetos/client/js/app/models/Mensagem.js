@@ -1,7 +1,9 @@
 class Mensagem {
 
-    constructor() {
-        this._texto
+    // Atribuindo valor padrão ao parametro caso não seja recebido valor
+
+    constructor( texto="" ) {
+        this._texto = texto
     }
 
     get texto() {

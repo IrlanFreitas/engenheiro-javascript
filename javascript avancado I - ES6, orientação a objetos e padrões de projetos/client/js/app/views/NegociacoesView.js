@@ -1,8 +1,7 @@
-class NegociacoesView {
-
+class NegociacoesView extends View{
 
     constructor(elemento) {
-        this._elemento = elemento
+        super(elemento)
     }
 
     template(modelo) {
@@ -35,21 +34,20 @@ class NegociacoesView {
         
         <tfoot>
             <td colspan="3"></td>
-            // Usando funções imediatas iife
-            // links:
-            // https://imasters.com.br/front-end/sobre-funcoes-imediatas-javascript-iife
+            <!-- 
+                Usando funções imediatas iife
+                links:
+                https://imasters.com.br/front-end/sobre-funcoes-imediatas-javascript-iife
 
-            // Usando o reduce
-            // 
+                Usando o reduce:
+                links:
+                https://www.devmedia.com.br/javascript-reduce-reduzindo-uma-colecao-em-um-unico-objeto/37981
+            --> 
             <td>${ modelo.negociacoes.reduce( (total, negociacao) => total + negociacao.volume, 0.0) }</td>
         </tfoot>
         </table>
         `
 
-    }
-
-    update(modelo) {
-        this._elemento.innerHTML = this.template(modelo)
     }
 
 }
