@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <p class="info">Era uma vez...</p>
+    <script>
+
+        class Aviao {
+
+            constructor(nome) {
+                this._nome = nome;
+            }
+
+            voa() {
+                alert(`${this._nome} está voando`);
+            }
+
+            ligaMotor() {
+                console.log('liga o motor');
+            }
+
+            fechaPortas() {
+                console.log('Portas sendo fechadas');
+            }
+        }
+
+        class Passarinho {
+
+            constructor(nome) {
+                this._nome = nome;
+            }
+
+            voa() {
+                // hum..precisamos implementar esse método também!
+            }
+        }
+
+    </script>
+</body>
+</html>

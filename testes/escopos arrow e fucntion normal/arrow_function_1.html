@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow Function 1</title>
+</head>
+<body>
+
+    <h1>TITULO</h1>
+    <p>PARAGRAFO</p>
+    <div>DADOS</div>
+
+    <script>
+        console.log(this); // é window
+
+        // * Escopo de Função Léxico
+        // * Primeiro, independente do elemento que eu clique, o this que é impresso no 
+        // * console é window e não aquele elemento do DOM. Segundo, como this é window 
+        // * e ele não possui a propriedade textContent, é exibido undefined para o usuário. 
+        // * Esse problema serve para demonstrar que uma arrow function vai além de uma 
+        // * sintaxe mais enxuta para declararmos funções.
+
+        // ! O this de uma arrow function é léxico, isto é, seu valor é determinado no 
+        // ! local onde a arrow function for definida, ela não cria um novo this. 
+        // ! O this de uma arrow function não pode ser alterado, mesmo se usarmos 
+        // ! recursos da linguagem, como a API Reflect.
+
+
+        let exibeConteudo = () =>  {
+            console.log(this);
+            alert(this.textContent);
+        };
+
+        $ = document.querySelector.bind(document);
+
+        $('h1').addEventListener('click', exibeConteudo);
+
+        $('p').addEventListener('click', exibeConteudo);
+
+        $('div').addEventListener('click', exibeConteudo);
+
+    </script>
+</body>
+</html>

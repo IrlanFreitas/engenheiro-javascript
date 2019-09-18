@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Function 1</title>
+</head>
+<body>
+
+    <h1>TITULO</h1>
+    <p>PARAGRAFO</p>
+    <div>DADOS</div>
+
+    <script>
+        console.log(this); // é window
+
+        // * Escopo de função dinâmico
+        // * Repare que o this é dinâmico, ou seja, seu valor é definido no momento em que a função é chamada, 
+        // * jamais no momento em que é declarada. Quando clicamos no h1, o this será este elemento, 
+        // * quando clicamos em p, o this será o elemento. Ainda bem que isso acontece, 
+        // * pois se o this não fosse dinâmico, não conseguiríamos escrever uma função genérica como a nossa.
+
+        // ! O this de uma função é dinâmico, isto é, seu valor é determinado no momento em que a função é chamada. 
+        // ! Como o this é dinâmico, é possível usar artifícios da linguagem, como a API Reflect, para alterá-lo 
+        // ! se assim desejarmos.
+
+        let exibeConteudo = function() {
+            console.log(this);
+            alert(this.textContent);
+        };
+
+        $ = document.querySelector.bind(document);
+
+        $('h1').addEventListener('click', exibeConteudo);
+
+        $('p').addEventListener('click', exibeConteudo);
+
+        $('div').addEventListener('click', exibeConteudo);
+
+    </script>
+</body>
+</html>
