@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="Funcionario.js"></script>
+
+    <script>
+
+        let funcionario = new Funcionario("irlan.freitas@hotmail.com")
+        console.log(funcionario.email);
+
+        let funProxy = new Proxy(funcionario, {
+
+            get(target, prop, receiver) {
+                console.log("Armadilha aqui");
+
+                return Reflect.get(target, prop, receiver)
+            }
+        })
+
+        console.log(funProxy.email);
+        
+
+    </script>
+</body>
+
+</html>
