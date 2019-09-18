@@ -82,23 +82,26 @@
         //}) **/
 
 
-        let lista = new Proxy(new ListaNegociacoes(), {
+        // let lista = new Proxy(new ListaNegociacoes(), {
 
-            get: function (target, prop, receiver) {
+        //     get(target, prop, receiver) {
 
-                if(['adiciona','esvazia'].includes(prop) && 
-                    typeof(target[prop]) == typeof(Function)) {
+        //         if(['adiciona','esvazia'].includes(prop) && 
+        //             typeof(target[prop]) == typeof(Function)) {
                     
-                    
-                    
-                }
+        //             return function() {
+        //                 console.log(`Interceptando ${prop}`)
+        //                 Reflect.apply(target[prop], target, arguments)
 
-                return Reflect.get(target, prop, receiver)
-            }
-        })
+        //             }
+        //         }
+
+        //         return Reflect.get(target, prop, receiver)
+        //     }
+        // })
 
 
-        lista.adiciona(new Negociacao(new Date(), 1, 100))
+        // lista.adiciona(new Negociacao(new Date(), 1, 100))
 
     </script>
 </body>
